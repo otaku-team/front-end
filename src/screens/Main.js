@@ -39,6 +39,19 @@ function Main({ navigation }) {
 
   const uploadImage = async () => {
     // 이미지 업로드 로직 추가
+    try {
+      const res = await getAniList(linkData);
+      if (res.status === 200) {
+        const res = await getAniList(linkData);
+        console.log("게시글 조회 성공", res);
+        console.log(res);
+        dispatch(changeNewData(res));
+        navigate("/Info");
+      }
+    } catch (error) {
+      console.log("게시글조회에러", error);
+      alert("잘못된 url이거나 암튼그렇다. 임마");
+    }
   };
 
   return (
