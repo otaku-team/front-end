@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import { View, Text, Button, TouchableOpacity } from "react-native";
+import { View, Button, Text, TouchableOpacity } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 function CustomImageInput({ imageUri, onSelectImage }) {
@@ -63,10 +63,7 @@ function Main({ navigation }) {
         <ImageContainer>
           <ImageBoxContainer>
             <InputText>Drop your images, browse or import from</InputText>
-            <CustomImageInput
-              imageUri={image}
-              onSelectImage={handleImageSelect}
-            />
+            <CustomImageInput imageUri={image} onSelectImage={handleImageSelect} />
           </ImageBoxContainer>
         </ImageContainer>
         <Button title="Submit" onPress={uploadImage} />
