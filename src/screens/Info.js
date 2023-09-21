@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text } from "react-native";
-import { styled } from "styled-components/native";
+
 import { getTest } from "../api/Index";
 
 function Info() {
@@ -21,15 +21,10 @@ function Info() {
     getData();
   }, []);
   return (
-    <ViewContainer>
-      <TextContainer>애니정보</TextContainer>
-    </ViewContainer>
+    <View>
+      <Text>애니정보</Text>
+    </View>
   );
 }
 
-const TextContainer = styled.Text`
-  font-size: 50px;
-`;
-
-const ViewContainer = styled.View``;
 export default Info;

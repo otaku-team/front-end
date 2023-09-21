@@ -5,25 +5,19 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import Main from "./src/screens/Main";
 import Info from "./src/screens/Info";
+import { RecoilRoot } from "recoil";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Info">
-        <Stack.Screen name="Main" component={Main} />
-        <Stack.Screen name="Info" component={Info} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <RecoilRoot>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Main">
+          <Stack.Screen name="Main" component={Main} />
+          <Stack.Screen name="Info" component={Info} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </RecoilRoot>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "white",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
